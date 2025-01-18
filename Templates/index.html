@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Precios en Airbnb</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predicción de Precios en Airbnb</h1>
+        <form method="post" action="/predict">
+            <label for="host_response_rate">Host Response Rate:</label>
+            <input type="text" id="host_response_rate" name="host_response_rate" value="{{ datos_usuario['host_response_rate'] if datos_usuario else '' }}">
+
+            <label for="host_acceptance_rate">Host Acceptance Rate:</label>
+            <input type="text" id="host_acceptance_rate" name="host_acceptance_rate" value="{{ datos_usuario['host_acceptance_rate'] if datos_usuario else '' }}">
+
+            <label for="accommodates">Accommodates:</label>
+            <input type="text" id="accommodates" name="accommodates" value="{{ datos_usuario['accommodates'] if datos_usuario else '' }}">
+
+            <label for="bathrooms_count">Bathrooms Count:</label>
+            <input type="text" id="bathrooms_count" name="bathrooms_count" value="{{ datos_usuario['bathrooms_count'] if datos_usuario else '' }}">
+
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="text" id="bedrooms" name="bedrooms" value="{{ datos_usuario['bedrooms'] if datos_usuario else '' }}">
+
+            <label for="availability_30">Availability 30:</label>
+            <input type="text" id="availability_30" name="availability_30" value="{{ datos_usuario['availability_30'] if datos_usuario else '' }}">
+
+            <label for="availability_60">Availability 60:</label>
+            <input type="text" id="availability_60" name="availability_60" value="{{ datos_usuario['availability_60'] if datos_usuario else '' }}">
+
+            <label for="availability_90">Availability 90:</label>
+            <input type="text" id="availability_90" name="availability_90" value="{{ datos_usuario['availability_90'] if datos_usuario else '' }}">
+
+            <label for="availability_365">Availability 365:</label>
+            <input type="text" id="availability_365" name="availability_365" value="{{ datos_usuario['availability_365'] if datos_usuario else '' }}">
+
+            <label for="number_of_reviews">Number of Reviews:</label>
+            <input type="text" id="number_of_reviews" name="number_of_reviews" value="{{ datos_usuario['number_of_reviews'] if datos_usuario else '' }}">
+
+            <label for="review_scores_rating">Review Scores Rating:</label>
+            <input type="text" id="review_scores_rating" name="review_scores_rating" value="{{ datos_usuario['review_scores_rating'] if datos_usuario else '' }}">
+
+            <label for="review_scores_value">Review Scores Value:</label>
+            <input type="text" id="review_scores_value" name="review_scores_value" value="{{ datos_usuario['review_scores_value'] if datos_usuario else '' }}">
+
+            <label for="reviews_per_month">Reviews per Month:</label>
+            <input type="text" id="reviews_per_month" name="reviews_per_month" value="{{ datos_usuario['reviews_per_month'] if datos_usuario else '' }}">
+
+            <label for="shared">Shared:</label>
+            <input type="text" id="shared" name="shared" value="{{ datos_usuario['shared'] if datos_usuario else '' }}">
+
+            <label for="host_is_superhost_encoded">Host is Superhost (Encoded):</label>
+            <input type="text" id="host_is_superhost_encoded" name="host_is_superhost_encoded" value="{{ datos_usuario['host_is_superhost_encoded'] if datos_usuario else '' }}">
+
+            <label for="room_type_encoded">Room Type (Encoded):</label>
+            <input type="text" id="room_type_encoded" name="room_type_encoded" value="{{ datos_usuario['room_type_encoded'] if datos_usuario else '' }}">
+
+            <label for="month">Month:</label>
+            <input type="text" id="month" name="month" value="{{ datos_usuario['month'] if datos_usuario else '' }}">
+
+            <label for="antiguedad">Antigüedad:</label>
+            <input type="text" id="antiguedad" name="antiguedad" value="{{ datos_usuario['antiguedad'] if datos_usuario else '' }}">
+
+            <button type="submit">Predecir</button>
+        </form>
+
+
+        {% if prediccion %}
+        <div class="result">
+            <p>El precio estimado es: <strong>{{ prediccion }}</strong></p>
+        </div>
+        <div>
+                {{ graph_html|safe }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
