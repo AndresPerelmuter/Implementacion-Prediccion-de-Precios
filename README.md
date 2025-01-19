@@ -6,6 +6,8 @@ El modelo y su entrenamiento se encuentran en el siguiente elnace (https://githu
 
 Esta herramienta resulta esencial para los anfitriones, ya que les permite maximizar sus ganancias al recibir recomendaciones de precios óptimos. Además, ofrece la posibilidad de simular modificaciones en las variables y visualizar su impacto en el precio estimado.
 
+La herramienta muestra un grafico comparando el precio sugerido con el precio de los demas hospedajes.
+
 **Características principales:**
 - Interfaz web intuitiva: permite a los usuarios ingresar datos y obtener predicciones en tiempo real.
 - Visualización interactiva: incluye gráficos dinámicos para explorar la densidad de precios estimados y reales.
