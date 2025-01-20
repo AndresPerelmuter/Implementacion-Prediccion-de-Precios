@@ -1,4 +1,4 @@
-**Predicción de Precios de Airbnb con Flask**
+**Implementacion de Predicción de Precios de Airbnb**
 
 Este proyecto implementa un modelo de Machine Learning diseñado para predecir los precios de propiedades en Airbnb, desarrollado en Python y Flask. Utilizando un modelo de regresión previamente entrenado, la interfaz sugiere un precio basado en diversas características, como la cantidad de huéspedes, la calificación del alojamiento y el mes. 
 
